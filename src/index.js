@@ -4,5 +4,8 @@ var mobileAuthentication = require("../src/api/mobile-authentication/mobile-auth
 
 // create route to redirect controller
 router.use("/api", mobileAuthentication);
+router.use("", (req, res) => {
+  res.send("server is running");
+});
 
 module.exports = router;
