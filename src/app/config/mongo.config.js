@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 // Define the MongoDB connection string
-const dbURI = process.env.MONGO_URI;
+const dbURL = process.env.MONGO_URL;
 
 // Create a function to establish the database connection
 function connectDB() {
-  mongoose.connect(dbURI);
+  mongoose.connect(dbURL);
 
   const db = mongoose.connection;
 
