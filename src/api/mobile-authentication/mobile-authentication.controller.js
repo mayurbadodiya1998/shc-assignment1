@@ -24,7 +24,7 @@ app.post("/send-otp", verifyToken, async (req, res) => {
   client.messages
     .create({
       to: phoneNumber,
-      from: "+1 910 728 4820",
+      from: process.env.SENDER_MOBILE_NUMBER,
       body: `Your verification code: ${verificationCode}. Verification code will expire in ${process.env.OTP_EXPIRY_TIME_IN_MINUTE} Min`,
     })
     .then(async (message) => {
